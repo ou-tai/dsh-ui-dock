@@ -1,0 +1,47 @@
+{
+  "name": "dsh-ui-dock",
+  "version": "0.3.0",
+  "description": "把 DSH 主界面拆成开关：逐个隐藏/显示左栏、会话列表、标题栏、消息区、输入框、右栏；左下角条目（费用、插件市场、记忆、账号）可逐项开关；齿轮可换图标、调大小、拖到任意位置，随时恢复；面板文案支持中英文切换，并可调整侧栏字号行高与面板停靠。",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "sidebar",
+    "layout",
+    "ui"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  },
+  "engines": {
+    "dsh": ">=0.2.1-rc.4"
+  }
+}

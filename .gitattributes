@@ -1,0 +1,11 @@
+# Ship LF in the repository and in the checkout.
+#
+# The plugin is installed by linking the working directory into a host profile,
+# and the host evaluates client.js directly. An autocrlf checkout would rewrite
+# every file to CRLF: diffs then show whole-file rewrites, and the published tarball
+# would no longer match the tree the tests ran against.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.webp binary
+*.gif binary
